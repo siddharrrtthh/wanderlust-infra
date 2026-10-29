@@ -1,16 +1,16 @@
 resource "aws_lb" "test" {
-  name               = "Wonderlust_ALB"
+  name               = "WonderlustALB"
   internal           = false
   load_balancer_type = "application"
   security_groups    = [aws_security_group.lb_sg.id]
-  subnets            = [
+  subnets = [
     aws_subnet.Wonderlust_VPC_Subnet_Public.id,
     aws_subnet.Wonderlust_VPC_Subnet_Public_2.id
   ]
 
-  enable_deletion_protection = true
+  enable_deletion_protection = false
 
-   access_logs {
+  access_logs {
     bucket  = aws_s3_bucket.lb_logs.id
     prefix  = "Wonderlust-lb"
     enabled = true
