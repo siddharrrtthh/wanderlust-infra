@@ -29,7 +29,7 @@ resource "aws_s3_bucket_policy" "lb_logs" {
 
         Action = "s3:PutObject"
 
-        Resource = "${aws_s3_bucket.lb_logs.arn}/test-lb/AWSLogs/${data.aws_caller_identity.current.account_id}/*"
+        Resource = "${aws_s3_bucket.lb_logs.arn}/Wonderlust-lb/AWSLogs/${data.aws_caller_identity.current.account_id}/*"
 
         Condition = {
           ArnLike = {
