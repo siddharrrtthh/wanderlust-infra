@@ -4,4 +4,5 @@ resource "aws_eip" "Wonderlust_EIP" {
   tags = {
     Name = "Wonderlust"
   }
+  
 }
